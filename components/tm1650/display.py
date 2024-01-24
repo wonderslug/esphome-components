@@ -32,7 +32,8 @@ CONFIG_SCHEMA = display.BASIC_DISPLAY_SCHEMA.extend({
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
 
-    await cg.register_component(var, config)
+    if cv.Version.parse(ESPHOME_VERSION) < cv.Version.parse("2023.12.0"):
+        await cg.register_component(var, config)
     await display.register_display(var, config)
     await i2c.register_i2c_device(var, config)
 
