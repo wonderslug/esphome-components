@@ -3,6 +3,7 @@ import esphome.config_validation as cv
 from esphome import pins
 from esphome.components import display, i2c
 from esphome.const import CONF_SCL, CONF_SDA, CONF_ID, CONF_LAMBDA, CONF_INTENSITY, CONF_MODE, CONF_POWER, CONF_LENGTH
+from esphome.const import __version__ as ESPHOME_VERSION
 import re
 
 DEPENDENCIES = ["i2c"]
